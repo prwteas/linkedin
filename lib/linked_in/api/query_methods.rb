@@ -23,11 +23,6 @@ module LinkedIn
         simple_query(path, options)
       end
 
-      def groups(options={})
-        path = "#{person_path(options)}/group-memberships?membership-state=member"
-        group_mash = simple_query(path, options)
-        group_mash.all
-      end
 
       def suggested_groups(options={})
         path   = "#{person_path(options)}/suggestions/groups"

@@ -54,15 +54,22 @@ module LinkedIn
         end
 
         def company_path(options)
-          path = "/companies/"
+          # We leave out the trailing slash because it is used by keys but not
+          # by filters
+          path = "/companies"
+          
+          # Add a trailing slash for keys (i.e. input values that return one
+          # company)
           if id = options.delete(:id)
-            path += "id=#{id}"
+            path += "/id=#{id}"
           elsif url = options.delete(:url)
-            path += "url=#{CGI.escape(url)}"
+            path += "/url=#{CGI.escape(url)}"
           elsif name = options.delete(:name)
-            path += "universal-name=#{CGI.escape(name)}"
+            path += "/universal-name=#{CGI.escape(name)}"
+          # Add a question mark for filters (i.e. input values that return
+          # an array of companies.
           elsif domain = options.delete(:domain)
-            path += "email-domain=#{CGI.escape(domain)}"
+            path += "?email-domain=#{CGI.escape(domain)}"
           else
             path += "~"
           end

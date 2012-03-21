@@ -8,6 +8,8 @@ module LinkedIn
     include Api::QueryMethods
     include Api::UpdateMethods
     include Api::GroupMethods
+    include Api::PostMethods
+    include Api::CommentMethods
     include Search
 
     attr_reader :consumer_token, :consumer_secret, :consumer_options

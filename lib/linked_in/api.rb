@@ -5,5 +5,6 @@ module LinkedIn
     autoload :GroupMethods,  "linked_in/api/group_methods"
     autoload :PostMethods,   "linked_in/api/post_methods"
     autoload :CommentMethods,"linked_in/api/comment_methods"
+    autoload :CompanySearchMethods, "linked_in/api/company_search_methods"
   end
 end

@@ -10,6 +10,7 @@ module LinkedIn
     include Api::GroupMethods
     include Api::PostMethods
     include Api::CompanySearchMethods
+    include Api::PeopleSearchMethods
     include Api::CommentMethods
     include Search
 
